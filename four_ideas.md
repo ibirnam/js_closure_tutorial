@@ -1,5 +1,3 @@
-4 ideas (just brief statements) for how you would teach a skill, technology, or topic with a project or exercise. An example is "teach real-time browser communication using WebSockets by building a Slack clone."
-
 # 1: Concurrency and Parallelism
 Teach the concepts of concurrency and parallelism through card sorting, having students sort cards individually, then together in ever increasing groups.
 

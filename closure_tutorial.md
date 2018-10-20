@@ -1,12 +1,28 @@
-# What's a Closure? (Definition)
+[cs10_lecture]: https://docs.google.com/presentation/d/1zuGTzrwfTxN-dd8nS7w4sjnIJdOtc6z3GaBtu2POgiA/edit#slide=id.g12e14709f3_0_292
+# What's a Closure?
+[MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures) defines a **Closure** as the following
+> A closure is the combination of a function and the lexical environment within which that function was declared.
+
+In simpler terms, a closure can be defined as a **function defined within a function**. In order to fully understand that though, we'll need a refresher from the earlier [scoping](cs10_lecture) tutorial, so we'll go through a refresher.
+
+## What You Will Learn
+By the end of this tutorial, you will be able to:
+
+* Understand what a closure is and how to use it
+* Understand how closures and scope are related
+* Write closures of your own for characters in a text-based game
+* Understand how state and privacy can be managed in JavaScript.
+
+![lets do this](https://media.giphy.com/media/zaezT79s3Ng7C/giphy.gif)
+>source: Giphy
 
 # Global vs. Local Scope
-[cs10_lecture]: https://docs.google.com/presentation/d/1zuGTzrwfTxN-dd8nS7w4sjnIJdOtc6z3GaBtu2POgiA/edit#slide=id.g12e14709f3_0_292
 So we recently learned about [scoping][cs10_lecture] in our previous tutorial. Closures really so heavily on understanding scoping though, it's worth a refresher.
 
 Remember, scoping is like your favorite vegetable/ogre:
 
 ![Onion/Ogre](https://a.wattpad.com/cover/25797160-288-k879061.jpg)
+>source: Wattpad
 
 There are **layers** of scope, and you can think of them in two main categories:
 
@@ -63,8 +79,9 @@ This is also why in question 3 from the last chapter, `localFn2()` returned a re
 The new Spider-Man game just launched last month! As an avid Spider-Man fan, you were inspired by playing the game: how natural web-swinging felt, how fluid the combat system was, and those stunning 4k graphics.
 
 ![Spider-Man](http://snappi-wpengine.netdna-ssl.com/wp-content/uploads/2018/08/Spider-Man-PS4.jpg)
+> Source: TakesOnTech
 
-Overcome with inspiration, you're want to try to make your own, simplified, Spider-Man game so that you can get more practice programming with a topic you love!
+Overcome with inspiration, you're want to make Spider-Text, a text-base Spider-Man game, so that you can get more practice programming with a topic you love!
 
 ## Web-Slinger
 The first thing we'd want to do is build out some of Spider-Man's attributes. Before we build out everything, let's just cover one basic trait: he needs to be able to swing on his webs!
@@ -121,6 +138,7 @@ webSwing(); // webCounter = 98, spidey says "just hangin - I'm swinging!"
 By declaring functions within functions, you create a **Scope Chain**. A scope chain is a one-way scoping relationship where a function has access to all scopes above it in the chain.
 
 ![global to parent to child)](https://i.imgur.com/ppkqlvu.png)
+> Source: Ian Birnam
 
 Every time we add a new function, a new link to the chain is added. The parent could have another child, there could be a grand-child link, or a great-grand-child, there's no limit!
 
@@ -404,7 +422,9 @@ Your code should pass the following tests:
 Verify and test your code with [jsConsole][jsConsole_link], and then push it to Github when you're done!
 
 #Conclusion
-Closures are a phenominal example of how versitle JavaScript can be. We're able to nest functions within each other, define clear scope boundaries, set functions to variables, create anonymous functions, and self-invoke them as well. 
+We've got our hero and villian for Spider-Text, what else can we build out? Can we interact with civillians? How do characters take damage? Can we allow Spider-Man to crawl on walls?  Continue to think about how you can build out Spider-Text, and if closures can help you to do so!
+
+While Spider-Text is cool, it showcases how closures are a phenominal example of JavaScript's versitility. We're able to nest functions within each other, define clear scope boundaries, set functions to variables, create anonymous functions, and self-invoke them as well. 
 
 Closures also allows for [object-oriented programming](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS) in JavaScript, in addition to many other more advanced techniques that we'll cover in later tutorials. What are some other applications of closures you can think of?
 
@@ -415,3 +435,4 @@ When you think about closures, remember:
 * Anonymous closures execute immediately, and allow us to maintain state and privacy
 
 ![Closure](https://media.giphy.com/media/yWli7pIg5myys/giphy.gif)
+> Source: Giphy

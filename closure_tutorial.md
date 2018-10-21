@@ -72,7 +72,7 @@ Try them for yourself by running them in [jsConsole][jsConsole_link]!
 
 This is why in question 1 from the last chapter, `localFn()` returned `localfoo` and not `foo`, since there was a `foo` variable that lived within its own scope, it didn't look further to check out the global variables.
 
-This is also why in question 3 from the last chapter, `localFn2()` returned a reference error, since `localTest` was not a variable that was wihin the local or global scope of `localFn()`.
+This is also why in question 3 from the last chapter, `localFn2()` returned a reference error, since `localTest` was not a variable that was within the local or global scope of `localFn()`.
 
 ## Closures and....Spider-Man?
 The new Spider-Man game just launched last month! As an avid Spider-Man fan, you were inspired by playing the game: how natural web-swinging felt, how fluid the combat system was, and those stunning 4k graphics.

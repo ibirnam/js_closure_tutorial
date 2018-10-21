@@ -433,7 +433,7 @@ Your code should pass the following tests:
 Verify and test your code with [jsConsole][jsConsole_link], and then push it to Github when you're done!
 
 # Conclusion
-We've got our hero and villian for Spider-Text, what else can we build out? Can we interact with civillians? How do characters take damage? Can we allow Spider-Man to crawl on walls?  Continue to think about how you can build out Spider-Text, and if closures can help you to do so!
+We've got our hero and villian for Spider-Text, what else can we build out? Can we interact with civillians? How do characters take damage? How do they regain health an stamina? Can we allow Spider-Man to crawl on walls?  Continue to think about how you can build out Spider-Text, and if closures can help you to do so!
 
 While Spider-Text is amazing, it showcases how closures are a phenominal example of JavaScript's versitility. We're able to nest functions within each other, define clear scope boundaries, set functions to variables, create anonymous functions, and self-invoke them as well. 
 

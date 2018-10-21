@@ -43,7 +43,7 @@ function bar() {
 ~~~
 > Question covers if they understand how scope chaining works, as it is an important aspect of closures. This shows they understand what a closure does and does not have access to.
 > The diagram should look similar to the one below, making sure they write a box for the Global scope (can't forget the `x` variable)
-> > ![scope chain diagram](https://i.imgur.com/exjlDIn.png)
+> ![scope chain diagram](https://i.imgur.com/exjlDIn.png)
 
 ## 4. In a few sentences, explain what is wrong this anonymous closure and the subsequent function call. Then, rewrite it with the appropriate fixes
 ~~~javascript

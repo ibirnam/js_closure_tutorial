@@ -211,6 +211,7 @@ function() {
 		secretIdentity = data.secretIdentity;
 		health = data.health;
 		webCounter = data.webCounter;
+		stamina = data.stamina;
 	}
 }
 ~~~
@@ -233,6 +234,7 @@ function() {
 		secretIdentity = data.secretIdentity;
 		health = data.health;
 		webCounter = data.webCounter;
+		stamina = data.stamina;
 	}
 	
 	// Checks how much web spider-man has left to use, returns -1 if he's out
@@ -281,7 +283,7 @@ function() {
 		}
 	}
 };
-var data = {secretIdentity: "Peter Parker", health: 100, webCounter: 100};
+var data = {secretIdentity: "Peter Parker", health: 100, webCounter: 100, stamina: 100};
 
 setStats(data); // secretIdentity, health, webCounter all initialized
 getHealth(); // returns 100
@@ -305,7 +307,7 @@ Let's store our big function into a `var spiderMan`:
 var spiderMan = function() {
 	// All code that existed within the function declaration from the last code block...
 };
-var data = {secretIdentity: "Peter Parker", health: 100, webCounter: 100};
+var data = {secretIdentity: "Peter Parker", health: 100, webCounter: 100, stamina: 100};
 
 setStats(data); // secretIdentity, health, webCounter all initialized
 getHealth(); // returns 100
@@ -342,6 +344,7 @@ var spiderMan = (function() {
 		secretIdentity = data.secretIdentity;
 		health = data.health;
 		webCounter = data.webCounter;
+		stamina = data.stamina;
 	}
 	
 	// Checks how much web spider-man has left to use, returns -1 if he's out
@@ -391,7 +394,7 @@ var spiderMan = (function() {
 	};
 })();
 
-var data = {secretIdentity: "Peter Parker", health: 100, webCounter: 100};
+var data = {secretIdentity: "Peter Parker", health: 100, webCounter: 100, stamina: 100};
 spiderMan.setStats(data); // secretIdentity, health, webCounter all initialized
 spiderMan.getHealth(); // returns 100
 spiderMan.webSwing(); // webCounter down to 99, spidey says "spin a web any size - I'm swinging!"
@@ -437,3 +440,65 @@ When you think about closures, remember:
 
 ![Closure](https://media.giphy.com/media/yWli7pIg5myys/giphy.gif)
 > Source: Giphy
+
+# Self-Assesment
+Questions are subsections, answers/ways for teachers to measure understanding given in quote blocks.
+## 1. In your own words, describe what a Closure is
+> A closure is a function within a function. Anything other than that means they missed the major point of this tutorial
+
+## 2. Given the code block, what value would be returned by the function sayFoo?
+
+~~~javascript
+var foo = "foo";
+function sayFoo(input) {
+	var foo = "bar"
+	return foo;
+}
+sayFoo(foo);
+~~~
+> Should answer "bar", this shows how well they understand global vs local scoping
+
+## 3. In a few sentences, explain what is wrong this anonymous closure and the subsequent function call. Then, rewrite it with the appropriate fixes
+~~~javascript
+var civilian = (function() {
+	var stamina = -1;
+	
+	return {
+		setStats: function (data) {
+			var health = -1;
+			var stamina = -1;
+			health = data.health
+			stamina = data.stamina
+		},
+	};
+})();
+
+var data = {health: 100, stamina: 100};
+civilian.setStats(data);
+console.log(civilian.health);
+~~~
+> Question covers if they understand how anonymous closures help with state and privacy management. Their answer should cover the following points:
+
+> * Requesting private variables publically and that the console log won't return anything
+> * Not keeping the stats (health, stamina) in a way such that their state will be saved
+
+> Fixed code should adhere to the following:
+> 
+~~~javascript
+var civilian = (function() {
+	var stamina = -1;
+	var health = -1;
+	return {
+		setStats: function (data) {
+			health = data.health
+			stamina = data.stamina
+		},
+		getHealth: function () {
+			return health;
+		},
+	};
+})();
+var data = {health: 100, stamina: 100};
+civilian.setStats(data);
+civilian.getHealth();
+~~~

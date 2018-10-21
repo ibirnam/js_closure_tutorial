@@ -295,7 +295,7 @@ webSwing(); // webCounter down to 99, spidey says "spin a web any size - I'm swi
 This seems good, but there's still a big problem with our code. We can't call any of the functions we wrote, as we did not store them anywhere!
 
 ## Function Declaration Vs. Expression
-There's also the problem that we've **declared** a large, Spider-Man function, but declaring it won't allow us to do anything with it. a **Function Declaration** is when we write something in the style of `function () {...}`
+There's also the problem that we've **declared** a large, Spider-Man function. a **Function Declaration** is when we write something in the style of `function () {...}`
 
 Instead, we need to write a **Function Expression**, which is when when we store a function as a variable such as ` var spiderMan = function() {...};`
 
@@ -402,7 +402,12 @@ spiderMan.getHealth(); // returns 100
 spiderMan.webSwing(); // webCounter down to 99, spidey says "spin a web any size - I'm swinging!"
 ~~~
 ## Question
-Now that we have Spider-Man, we need to make a bad guy to chase after him. Let's create a basic Electro given the following requirements:
+Now that we have Spider-Man, we need to make a bad guy to chase after him. 
+
+![Electro](https://i.imgur.com/kRGy0ZT.jpg)
+> Source: Reddit
+
+Let's create a basic Electro given the following requirements:
 
 * Electro has to have secret identity, health, stamina, and charge level stats
 * Electro should have a `fight` function that randomly picks between a punch, kick, or electric shock

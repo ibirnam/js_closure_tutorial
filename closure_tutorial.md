@@ -80,7 +80,7 @@ The new Spider-Man game just launched last month! As an avid Spider-Man fan, you
 ![Spider-Man](http://snappi-wpengine.netdna-ssl.com/wp-content/uploads/2018/08/Spider-Man-PS4.jpg)
 > Source: TakesOnTech
 
-Overcome with inspiration, you're want to make Spider-Text, a text-base Spider-Man game, so that you can get more practice programming with a topic you love!
+Overcome with inspiration, you're want to make Spider-Text, a text-based Spider-Man game, so that you can get more practice programming with a topic you love!
 
 ## Web-Slinger
 The first thing we'd want to do is build out some of Spider-Man's attributes. Before we build out everything, let's just cover one basic trait: he needs to be able to swing on his webs!
@@ -123,10 +123,10 @@ function webSwing() {
 			return "I'm out of webs!";
 		}
 		webCounter -= 1
-		return quips[getRandomInt(quips.length)];
+		return quips[getRandomInt(quips.length)] + " - I'm swinging!";
 	}
 	swingJump();
-	return shootWeb() + " - I'm swinging!";
+	return shootWeb();
 }
 webSwing(); // webCounter = 99, spidey says "spin a web any size - I'm swinging!"
 webSwing(); // webCounter = 98, spidey says "just hangin - I'm swinging!"
@@ -278,10 +278,10 @@ function() {
 						return "I'm out of webs!";
 					}
 					webCounter -= 1
-					return quips[getRandomInt(quips.length)];
+					return quips[getRandomInt(quips.length)] + " - I'm swinging!";
 				};
 			swingJump();
-			return shootWeb() + " - I'm swinging!";
+			return shootWeb();
 		}
 	}
 };
@@ -313,7 +313,7 @@ var data = {secretIdentity: "Peter Parker", health: 100, webCounter: 100, stamin
 
 setStats(data); // secretIdentity, health, webCounter all initialized
 getHealth(); // returns 100
-webSwing(); // webCounter down to 99, spidey says "spin a web any size- I'm swinging!"
+webSwing(); // webCounter down to 99, spidey says "spin a web any size - I'm swinging!"
 ~~~
 That should get us what we want...right?
 ## Anonymous Closures
@@ -388,10 +388,10 @@ var spiderMan = (function() {
 						return "I'm out of webs!";
 					}
 					webCounter -= 1
-					return quips[getRandomInt(quips.length)];
+					return quips[getRandomInt(quips.length)] + " - I'm swinging!";
 			};
 			swingJump();
-			return shootWeb() + " - I'm swinging!";
+			return shootWeb();
 		}
 	};
 })();

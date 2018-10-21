@@ -447,5 +447,10 @@ When you think about closures, remember:
 * The scope of variables/functions is a one-way chain from parent to child
 * Anonymous closures execute immediately, and allow us to maintain state and privacy
 
-![Closure](https://media.giphy.com/media/yWli7pIg5myys/giphy.gif)
-> Source: Giphy
+`![Closure](https://media.giphy.com/media/yWli7pIg5myys/giphy.gif)`
+<p align="center">
+<img src="https://media.giphy.com/media/yWli7pIg5myys/giphy.gif" />
+</p>
+<p align="center">
+Source: Giphy
+</p>

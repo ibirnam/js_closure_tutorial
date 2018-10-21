@@ -45,7 +45,7 @@ function bar() {
 > The diagram should look similar to the one below, making sure they write a box for the Global scope (can't forget the `x` variable)
 > ![scope chain diagram](https://i.imgur.com/exjlDIn.png)
 
-## 4. In a few sentences, explain what is wrong this anonymous closure and the subsequent function call. Then, rewrite it with the appropriate fixes
+## 4. In a few sentences, explain what is wrong this anonymous closure and the subsequent function call. Then, rewrite it with the appropriate fixes (create new functions if you need to)
 ~~~javascript
 var civilian = (function() {
 	var stamina = -1;

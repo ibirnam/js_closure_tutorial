@@ -2,7 +2,7 @@
 Teach the concepts of concurrency and parallelism through card sorting, having students sort cards individually, then together in ever increasing groups with defined sorting strategies.
 
 # 2: Scoping
-Teach how variable/function scoping works by building a Hangman game.
+Teach how variable/function scoping works by building a Hangman game (assume any graphical part is handled for the students).
 
 # 3: Object-Oriented Programming
 Teach the object-oriented programming paradigm by building a short, text-based RPG game.

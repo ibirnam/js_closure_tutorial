@@ -432,6 +432,8 @@ While Spider-Text is amazing, it showcases how closures are a phenominal example
 
 Closures also allows for [object-oriented programming](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS) in JavaScript, in addition to many other more advanced techniques that we'll cover in later tutorials. What are some other applications of closures you can think of?
 
+Please check out the [self assessment questions](self-assessment.md) to see how well you've mastered the concepts!
+
 When you think about closures, remember:
 
 * They're functions within functions

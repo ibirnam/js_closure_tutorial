@@ -1,4 +1,4 @@
-# Self-Assesment
+# Self Assesment
 Questions are subsections, answers/ways for teachers to measure understanding given in quote blocks.
 
 ## 1. In your own words, describe what a Closure is

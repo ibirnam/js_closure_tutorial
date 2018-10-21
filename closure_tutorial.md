@@ -13,16 +13,22 @@ By the end of this tutorial, you will be able to:
 * Write closures of your own for characters in a text-based game
 * Understand how state and privacy can be managed in JavaScript
 
-![lets do this](https://media.giphy.com/media/zaezT79s3Ng7C/giphy.gif)
-> source: Giphy
-
+<p align="center">
+<img src="https://media.giphy.com/media/zaezT79s3Ng7C/giphy.gif" alt="lets do this"/>
+</p>
+<p align="center">
+Source: Giphy
+</p>
 
 # Global vs. Local Scope
 Closures rely heavily on understanding how scoping works. Remember, scoping is like your favorite vegetable/ogre:
 
-![Onion/Ogre](https://a.wattpad.com/cover/25797160-288-k879061.jpg)
-> source: Wattpad
-
+<p align="center">
+<img src="https://a.wattpad.com/cover/25797160-288-k879061.jpg" alt="onion and ogre"/>
+</p>
+<p align="center">
+Source: Wattpad
+</p>
 
 There are **layers** of scope, and you can think of them in two main categories:
 
@@ -77,8 +83,13 @@ This is also why in question 3 from the last chapter, `localFn2()` returned a re
 ## Closures and....Spider-Man?
 The new Spider-Man game just launched last month! As an avid Spider-Man fan, you were inspired by playing the game: how natural web-swinging felt, how fluid the combat system was, and those stunning 4k graphics.
 
-![Spider-Man](http://snappi-wpengine.netdna-ssl.com/wp-content/uploads/2018/08/Spider-Man-PS4.jpg)
-> Source: TakesOnTech
+
+<p align="center">
+<img src="http://snappi-wpengine.netdna-ssl.com/wp-content/uploads/2018/08/Spider-Man-PS4.jpg" alt="spider-man"/>
+</p>
+<p align="center">
+Source: TakesOnTech
+</p>
 
 Overcome with inspiration, you're want to make Spider-Text, a text-based Spider-Man game, so that you can get more practice programming with a topic you love!
 
@@ -139,8 +150,12 @@ webSwing(); // webCounter = 98, spidey says "just hangin - I'm swinging!"
 ## Scope Chain
 By declaring functions within functions, you create a **Scope Chain**. A scope chain is a one-way scoping relationship where a function has access to all scopes above it in the chain.
 
-![global to parent to child)](https://i.imgur.com/ppkqlvu.png)
-> Source: Ian Birnam
+<p align="center">
+<img src="https://i.imgur.com/ppkqlvu.png" alt="scope chain"/>
+</p>
+<p align="center">
+Source: Ian Birnam
+</p>
 
 Every time we add a new function, a new link to the chain is added. The parent could have another child, there could be a grand-child link, or a great-grand-child, there's no limit!
 
@@ -404,8 +419,12 @@ spiderMan.webSwing(); // webCounter down to 99, spidey says "spin a web any size
 ## Question
 Now that we have Spider-Man, we need to make a bad guy to chase after him. 
 
-![Electro](https://i.imgur.com/kRGy0ZT.jpg)
-> Source: Reddit
+<p align="center">
+<img src="https://i.imgur.com/kRGy0ZT.jpg" alt="electro"/>
+</p>
+<p align="center">
+Source: Reddit
+</p>
 
 Let's create a basic Electro given the following requirements:
 
@@ -447,9 +466,8 @@ When you think about closures, remember:
 * The scope of variables/functions is a one-way chain from parent to child
 * Anonymous closures execute immediately, and allow us to maintain state and privacy
 
-`![Closure](https://media.giphy.com/media/yWli7pIg5myys/giphy.gif)`
 <p align="center">
-<img src="https://media.giphy.com/media/yWli7pIg5myys/giphy.gif" />
+<img src="https://media.giphy.com/media/yWli7pIg5myys/giphy.gif" alt="closure"/>
 </p>
 <p align="center">
 Source: Giphy

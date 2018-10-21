@@ -435,7 +435,7 @@ Verify and test your code with [jsConsole][jsConsole_link], and then push it to 
 # Conclusion
 We've got our hero and villian for Spider-Text, what else can we build out? Can we interact with civillians? How do characters take damage? How do they regain health an stamina? Can we allow Spider-Man to crawl on walls?  Continue to think about how you can build out Spider-Text, and if closures can help you to do so!
 
-While Spider-Text is amazing, it showcases how closures are a phenominal example of JavaScript's versitility. We're able to nest functions within each other, define clear scope boundaries, set functions to variables, create anonymous functions, and self-invoke them as well. 
+While Spider-Text will become an amazing game, it also showcased how closures are a phenominal example of JavaScript's versitility. We're able to nest functions within each other, define clear scope boundaries, set functions to variables, create anonymous functions, and self-invoke them as well. 
 
 Closures also allows for [object-oriented programming](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS) in JavaScript, in addition to many other more advanced techniques that we'll cover in later tutorials. What are some other applications of closures you can think of?
 

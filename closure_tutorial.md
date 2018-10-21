@@ -70,7 +70,7 @@ Try them for yourself by running them in [jsConsole][jsConsole_link]!
 * Global variables/functions can be accessed by all other variables and functions
 * Local variables/functions can only be accessed within the function they live in
 
-This is why in question 1 from the last chapter, `localFn()` returned `localfoo` and not `foo`, since there was a `foo` variable that lived within its own scope, it didn't look further to check out the global variables. **If variables have the same name, the most local variable will always have the highest priority**.
+This is why in question 1 from the last chapter, `localFn()` returned `localfoo` and not `foo`, since there was a `foo` variable that lived within its own scope, it didn't look further to check out the global variables.
 
 This is also why in question 3 from the last chapter, `localFn2()` returned a reference error, since `localTest` was not a variable that was wihin the local or global scope of `localFn()`.
 

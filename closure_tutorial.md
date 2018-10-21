@@ -409,7 +409,7 @@ Now that we have Spider-Man, we need to make a bad guy to chase after him.
 
 Let's create a basic Electro given the following requirements:
 
-* Electro has to have secret identity, health, stamina, and charge level stats
+* Electro has to have health, stamina, and charge level stats
 * Electro should have a `fight` function that randomly picks between a punch, kick, or electric shock
 	* punch requires 1 stamina
 	* kick requires 2 stamina
@@ -424,11 +424,11 @@ Let's create a basic Electro given the following requirements:
 ### Tests
 Your code should pass the following tests:
 
-* `electro.init(data)` should take in an object with name/value pairs for `health`, `stamina`, `charge`, and `secretIdentity`
+* `electro.init(data)` should take in an object with name/value pairs for `health`, `stamina`, and `charge`
 * `electro.getHealth()`, `electro.getStamina()`, and `electro.getCharge()` should all return an integer that corresponds to electro's health, stamina, and charge respectively
 * `electro.fight()` should return a string of `"electro [punched][kicked][shocked]!"` depending on which one got selected, and the appropriate stamina and charge stats should decrement accordingly.
 * `electro.storm()` should return a string of `"electro launched a storm!"`, and the appropriate stamina and charge stats should decrement accordingly
-* If the `fight()` or `storm()` functions are called and `stamina` is <= 0, return a string of `"I need more juice!"`
+* If the `fight()` or `storm()` functions are called and `stamina <= 0`, return a string of `"I need more juice!"`
 
 Verify and test your code with [jsConsole][jsConsole_link], and then push it to Github when you're done!
 

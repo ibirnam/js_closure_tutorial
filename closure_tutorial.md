@@ -132,7 +132,7 @@ webSwing(); // webCounter = 99, spidey says "spin a web any size - I'm swinging!
 webSwing(); // webCounter = 98, spidey says "just hangin - I'm swinging!"
 ~~~
 
-`shootWeb()` is able to access the variables from its parent function `webSwing()`! Because the innermost (child) function *lives inside the parent function*, it is able to access it's parent's scope. This is an example of **lexical scoping**.
+`shootWeb()` is able to access the variables (`quips`) from its parent function `webSwing()`, as well as global variables and functions such as `webCounter` and `getRandomInt`! Because the innermost (child) function *lives inside the parent function*, it is able to access it's parent's scope. This is an example of **lexical scoping**.
 
 **This overall concept of defining a function within a function is a closure!**
 

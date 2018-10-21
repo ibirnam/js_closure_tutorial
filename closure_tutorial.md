@@ -14,9 +14,7 @@ By the end of this tutorial, you will be able to:
 * Understand how state and privacy can be managed in JavaScript
 
 <p align="center">
-
 ![lets do this](https://media.giphy.com/media/zaezT79s3Ng7C/giphy.gif)
-
 </p>
 
 <p align="center">

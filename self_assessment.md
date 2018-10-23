@@ -1,4 +1,4 @@
-# Self Assesment
+# Self Assessment
 Questions are subsections, answers/ways for teachers to measure understanding given in quote blocks.
 
 ## 1. In your own words, describe what a Closure is
@@ -66,7 +66,7 @@ console.log(civilian.health);
 ~~~
 > Question covers if they understand how anonymous closures help with state and privacy management. Their answer should cover the following points:
 
-> * Requesting private variables publically and that the console log won't return anything
+> * Requesting private variables publicly and that the console log won't return anything
 > * Not keeping the stats (health, stamina) in a way such that their state will be saved
 
 > Fixed code should adhere to the following:

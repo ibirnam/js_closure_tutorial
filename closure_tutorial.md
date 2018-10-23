@@ -14,7 +14,7 @@ By the end of this tutorial, you will be able to:
 * Understand how state and privacy can be managed in JavaScript
 
 <p align="center">
-<img src="https://media.giphy.com/media/zaezT79s3Ng7C/giphy.gif" alt="lets do this"/>
+<img src="https://media.giphy.com/media/zaezT79s3Ng7C/giphy.gif" alt="let’s do this"/>
 </p>
 <p align="center">
 Source: Giphy
@@ -138,7 +138,7 @@ webSwing(); // webCounter = 99, spidey says "spin a web any size - I'm swinging!
 webSwing(); // webCounter = 98, spidey says "just hangin - I'm swinging!"
 ~~~
 
-`shootWeb()` is able to access the variables (`quips`) from its parent function `webSwing()`, as well as global variables and functions such as `webCounter` and `getRandomInt`! Because the innermost (child) function *lives inside the parent function*, it is able to access it's parent's scope. This is an example of **lexical scoping**.
+`shootWeb()` is able to access the variables (`quips`) from its parent function `webSwing()`, as well as global variables and functions such as `webCounter` and `getRandomInt`! Because the innermost (child) function *lives inside the parent function*, it is able to access its parent's scope. This is an example of **lexical scoping**.
 
 **This overall concept of defining a function within a function is a closure!**
 
@@ -181,7 +181,7 @@ Your code should pass the following tests:
 * If `fight()` is called when `stamina <= 0`, it should return a string of `"gotta run!"`
 * If someone tries to individually call `spidey.punch()` or `spidey.kick()`, it should result in an error
 
-Verify and test your code with [jsConsole][jsConsole_link], and then push it to Github when you're done!
+Verify and test your code with [jsConsole][jsConsole_link], and then push it to GitHub when you're done!
 
 # Anonymous Closures
 ## Recap
@@ -190,7 +190,7 @@ Verify and test your code with [jsConsole][jsConsole_link], and then push it to 
 	* Chain always goes *one way*, a parent will *never* have access to the scope of its child
 
 ## Spider-Man the Variable
-So we made some functions for Spider-Man to do things, but how can we web swing or fight Green Goblin if we don't have an actual Spider-Man to do that? Spider-Text requires a Spider-Man character! As the game's creator, you want to have a Spider-Man character so that you can make use of the functions you've already written. We should write Spider-Man as a closure!
+So, we made some functions for Spider-Man to do things, but how can we web swing or fight Green Goblin if we don't have an actual Spider-Man to do that? Spider-Text requires a Spider-Man character! As the game's creator, you want to have a Spider-Man character so that you can make use of the functions you've already written. We should write Spider-Man as a closure!
 
 Let's go over what needs to be captured in this character:
 
@@ -313,11 +313,11 @@ This seems good, but there's still a big problem with our code. We can't call an
 ## Function Declaration Vs. Expression
 There's also the problem that we've **declared** a large, Spider-Man function. a **Function Declaration** is when we write something in the style of `function () {...}`
 
-Instead, we need to write a **Function Expression**, which is when when we store a function as a variable such as ` var spiderMan = function() {...};`
+Instead, we need to write a **Function Expression**, which is when we store a function as a variable such as ` var spiderMan = function() {...};`
 
 The main difference between the two is that **Function Expressions can retain a copy of the local variables/functions from the scope in which they were defined in.**
 
-By storing the function in a variable, we will be able to create **state** for our character. State will allow us to save Spider-Man's data (like his secret identity), and allows us to update data and have those updates persist.
+By storing the function in a variable, we will be able to create **state** for our character. State will allow us to save Spider-Man's data (like his secret identity) and allows us to update data and have those updates persist.
 
 Let's store our big function into a `var spiderMan`:
 
@@ -429,7 +429,7 @@ Let's create a basic Electro given the following requirements:
 	* `punch()` requires 1 stamina
 	* `kick()` requires 2 stamina
 	* `shock()` requires 3 stamina and 5 charge
-	* `punch()`, `kick()`, and `shock()` should *not* be publically accessible
+	* `punch()`, `kick()`, and `shock()` should *not* be publicly accessible
 * Electro can also fire off an electric `storm()` at will, which requires 10 stamina and 15 charge
 * If the `fight()` or `storm()` functions are called and `stamina <= 0`, Electro should say `"I need more juice!"`
 * There needs to be a public way to set Electro's stats
@@ -447,12 +447,12 @@ Your code should pass the following tests:
 * If the `fight()` or `storm()` functions are called and `stamina <= 0`, return a string of `"I need more juice!"`
 * If someone tries to individually call `electro.punch()`, `electro.kick()`, or `electro.shock()` it should result in an error
 
-Verify and test your code with [jsConsole][jsConsole_link], and then push it to Github when you're done!
+Verify and test your code with [jsConsole][jsConsole_link], and then push it to GitHub when you're done!
 
 # Conclusion
-We've got our hero and villian for Spider-Text, what else can we build out? Can we interact with civillians? How do characters take damage? How do they regain health an stamina? Can we allow Spider-Man to crawl on walls?  Continue to think about how you can build out Spider-Text, and if closures can help you to do so!
+We've got our hero and villain for Spider-Text, what else can we build out? Can we interact with civilians? How do characters take damage? How do they regain health and stamina? Can we allow Spider-Man to crawl on walls?  Continue to think about how you can build out Spider-Text, and if closures can help you to do so!
 
-While Spider-Text will become an amazing game, it also showcased how closures are a phenominal example of JavaScript's versitility. We're able to nest functions within each other, define clear scope boundaries, set functions to variables, create anonymous functions, and self-invoke them as well. 
+While Spider-Text will become an amazing game, it also showcased how closures are a phenomenal example of JavaScript's versatility. We're able to nest functions within each other, define clear scope boundaries, set functions to variables, create anonymous functions, and self-invoke them as well. 
 
 Closures also allow for creating public/private variables and functions. This is important if we ever want to restrict access, as rarely does it make sense to make everything global. For example, what if *anyone* could change Spider-Man's health? Or make him shoot a web?
 

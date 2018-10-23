@@ -37,7 +37,7 @@ There are **layers** of scope, and you can think of them in two main categories:
 
 ~~~javascript
 // This is the Global scope. All variables and functions 
-// here can be accessed by all scripts.
+// Here can be accessed by all scripts.
 var foo = "foo";
 var bar = "bar";
 var boom = "boom";
@@ -45,7 +45,7 @@ var boom = "boom";
 function localFn() {
 	// This is the local scope to the function localFn.
 	// Variables and functions created here can only be 
-	// accessed by localFn
+	// Accessed by localFn
 	var foo = "loFoo";
 	var bar = "loBar";
 	var localTest = "local";
@@ -55,7 +55,7 @@ function localFn() {
 function localFn2() {
 	// This is the local scope to the function localFn2.
 	// Variables and functions created here can only be 
-	// accessed by localFn2
+	// Accessed by localFn2
 	var test = "test";
 	return test;
 }
@@ -91,7 +91,7 @@ The new Spider-Man game just launched last month! As an avid Spider-Man fan, you
 Source: TakesOnTech
 </p>
 
-Overcome with inspiration, you're want to make Spider-Text, a text-based Spider-Man game, so that you can get more practice programming with a topic you love!
+Overcome with inspiration, you want to make Spider-Text, a text-based Spider-Man game, so that you can get more practice programming with a topic you love!
 
 ## Web-Slinger
 The first thing we'd want to do is build out some of Spider-Man's attributes. Before we build out everything, let's just cover one basic trait: he needs to be able to swing on his webs!
@@ -103,12 +103,8 @@ Remember, this is a much simpler Spider-Man, and he's only ever going to shoot w
 But what if we defined a function ***within*** a function?
 
 ~~~javascript
-// can shoot 100 times before needing to refill
+// Can shoot 100 times before needing to refill
 var webCounter = 100;
-
-function swingJump() {
-	// code that automatically handles Spider-Man's jumping while swinging...
-}
 
 // Checks how much web spider-man has left to use, returns -1 if he's out
 function checkWebSupply() {
@@ -118,7 +114,7 @@ function checkWebSupply() {
 	return webCounter;
 }
 
-// Returns an random integer between 0 and max
+// Returns a random integer between 0 and max
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
@@ -136,7 +132,6 @@ function webSwing() {
 		webCounter -= 1
 		return quips[getRandomInt(quips.length)] + " - I'm swinging!";
 	}
-	swingJump();
 	return shootWeb();
 }
 webSwing(); // webCounter = 99, spidey says "spin a web any size - I'm swinging!"
@@ -157,12 +152,22 @@ By declaring functions within functions, you create a **Scope Chain**. A scope c
 Source: Ian Birnam
 </p>
 
+Here's the Scope Chain from the previous Web-Slinger section:
+
+<p align="center">
+<img src="https://i.imgur.com/FF8GsVf.png" alt="web-slinger scope chain"/>
+</p>
+<p align="center">
+Source: Ian Birnam
+</p>
+
 Every time we add a new function, a new link to the chain is added. The parent could have another child, there could be a grand-child link, or a great-grand-child, there's no limit!
 
 ## Question
 Spider-Man needs to be able to punch the bad guys like Venom and Electro, but he also can only fight for so long before he gets tired. Write functions to meet the following requirements:
 
-* The `punch()` and `kick()` functions live within a parent `fight()` function, which randomly returns a punch or a kick
+* The `punch()` and `kick()` functions live within a parent `fight()` function, which randomly returns a punch or a kick.
+* `punch()` and `kick()` should *not* be globally accessible
 * A punch decreases his `stamina` by 1
 * A kick decreases his `stamina` by 2
 * Punches should return a string of `"spidey punched!"`
@@ -174,6 +179,7 @@ Your code should pass the following tests:
 
 * `fight()` should return a string of `"spidey [punched][kicked]!"` depending on which one got selected, and `stamina` should decrement accordingly.
 * If `fight()` is called when `stamina <= 0`, it should return a string of `"gotta run!"`
+* If someone tries to individually call `spidey.punch()` or `spidey.kick()`, it should result in an error
 
 Verify and test your code with [jsConsole][jsConsole_link], and then push it to Github when you're done!
 
@@ -184,7 +190,7 @@ Verify and test your code with [jsConsole][jsConsole_link], and then push it to 
 	* Chain always goes *one way*, a parent will *never* have access to the scope of its child
 
 ## Spider-Man the Variable
-So we made some functions for Spider-Man to do things, but how can we web swing or fight Green Goblin if we don't have an actual Spider-Man to do that? Spider-Text requires a Spider-Man character! As the game's creater, you want to have a Spider-Man character so that you can make use of the functions you've already written. We should write Spider-Man as a closure!
+So we made some functions for Spider-Man to do things, but how can we web swing or fight Green Goblin if we don't have an actual Spider-Man to do that? Spider-Text requires a Spider-Man character! As the game's creator, you want to have a Spider-Man character so that you can make use of the functions you've already written. We should write Spider-Man as a closure!
 
 Let's go over what needs to be captured in this character:
 
@@ -202,7 +208,7 @@ These should be variables of the Spider-Man character
 
 ~~~javascript
 function() {
-	//prviate variables
+	// Private variables
 	var secretIdentity = "";
 	var health = -1;
 	var stamina = -1;
@@ -215,13 +221,13 @@ We need to be able to initialize these variables when we first create our Spider
 
 ~~~javascript
 function() {
-	//prviate variables
+	// Private variables
 	var secretIdentity = "";
 	var health = -1;
 	var stamina = -1;
 	var webCounter = -1;
 	
-	//private functions
+	// Private functions
 
 	// Initializes Spider-Man's data
 	function init(data) {
@@ -238,13 +244,13 @@ We want Spider-Man to be able to swing and fight, and we want anyone to be able 
 
 ~~~javascript
 function() {
-	//prviate variables
+	// Private variables
 	var secretIdentity = "";
 	var health = -1;
 	var stamina = -1;
 	var webCounter = -1;
 	
-	//private functions
+	// Private functions
 	
 	// Initializes Spider-Man's data
 	function init(data) {
@@ -262,18 +268,14 @@ function() {
 		return webCounter;
 	}
 
-	// Returns an random integer between 0 and max
+	// Returns a random integer between 0 and max
 	function getRandomInt(max) {
 	  return Math.floor(Math.random() * Math.floor(max));
 	}
 	
-	function swingJump() {
-		// code that automatically handles Spider-Man's jumping while swinging...
-	}
+	// Any other private functions you need for the fight function...
 	
-	// any other private functions you need for the fight function...
-	
-	//public functions
+	// Public functions
 	return {
 		setStats: function (data) {
 			return init(data)
@@ -282,7 +284,7 @@ function() {
 			return health;
 		},
 		fight: function () {
-			//fight code from previous chapter...
+			// Fight code from previous chapter...
 		},
 		webSwing: function() {
 			// Spider-Man is a talker, so we need some phrases for him to say
@@ -295,7 +297,6 @@ function() {
 					webCounter -= 1
 					return quips[getRandomInt(quips.length)] + " - I'm swinging!";
 				};
-			swingJump();
 			return shootWeb();
 		}
 	}
@@ -342,19 +343,19 @@ What we need to do is create an **Anonymous Closure**, also known as an **Instan
 var spiderMan = (function() {...})();
 ~~~
 
-Anonymous closures also allow us have private variables/functions in JavaScript, as there is no way to access variables or functions unless you return them, since we've restricted the scope.
+Anonymous closures also allow us to have private variables/functions in JavaScript, as there is no way to access variables or functions unless you return them, since we've restricted the scope.
 
 Now we can finally create our Spider-Man:
 
 ~~~javascript
 var spiderMan = (function() {
-	//prviate variables
+	// Private variables
 	var secretIdentity = "";
 	var health = -1;
 	var stamina = -1;
 	var webCounter = -1;
 	
-	//private functions
+	// Private functions
 	
 	// Initializes Spider-Man's data
 	function init(data) {
@@ -372,18 +373,14 @@ var spiderMan = (function() {
 		return webCounter;
 	}
 	
-	// Returns an random integer between 0 and max
+	// Returns a random integer between 0 and max
 	function getRandomInt(max) {
 	  return Math.floor(Math.random() * Math.floor(max));
 	}
+		
+	// Any other private functions you need for the fight function...
 	
-	function swingJump() {
-		// code that automatically handles Spider-Man's jumping while swinging...
-	}
-	
-	// any other private functions you need for the fight function...
-	
-	//public functions
+	// Public functions
 	return {
 		setStats: function (data) {
 			return init(data)
@@ -392,7 +389,7 @@ var spiderMan = (function() {
 			return health;
 		},
 		fight: function () {
-			//fight code from previous chapter...
+			// Fight code from previous chapter...
 		},
 		webSwing: function() {
 			// Spider-Man is a talker, so we need some phrases for him to say
@@ -405,7 +402,6 @@ var spiderMan = (function() {
 					webCounter -= 1
 					return quips[getRandomInt(quips.length)] + " - I'm swinging!";
 			};
-			swingJump();
 			return shootWeb();
 		}
 	};
@@ -430,10 +426,11 @@ Let's create a basic Electro given the following requirements:
 
 * Electro has to have health, stamina, and charge level stats
 * Electro should have a `fight` function that randomly picks between a punch, kick, or electric shock
-	* punch requires 1 stamina
-	* kick requires 2 stamina
-	* electric shock requires 3 stamina and 5 charge
-* Electro can also fire off an electric storm at will, which requires 10 stamina and 15 charge
+	* `punch()` requires 1 stamina
+	* `kick()` requires 2 stamina
+	* `shock()` requires 3 stamina and 5 charge
+	* `punch()`, `kick()`, and `shock()` should *not* be publically accessible
+* Electro can also fire off an electric `storm()` at will, which requires 10 stamina and 15 charge
 * If the `fight()` or `storm()` functions are called and `stamina <= 0`, Electro should say `"I need more juice!"`
 * There needs to be a public way to set Electro's stats
 * There needs to be a public way to individually get Electro's health, stamina, and charge level stats
@@ -448,6 +445,7 @@ Your code should pass the following tests:
 * `electro.fight()` should return a string of `"electro [punched][kicked][shocked]!"` depending on which one got selected, and the appropriate stamina and charge stats should decrement accordingly.
 * `electro.storm()` should return a string of `"electro launched a storm!"`, and the appropriate stamina and charge stats should decrement accordingly
 * If the `fight()` or `storm()` functions are called and `stamina <= 0`, return a string of `"I need more juice!"`
+* If someone tries to individually call `electro.punch()`, `electro.kick()`, or `electro.shock()` it should result in an error
 
 Verify and test your code with [jsConsole][jsConsole_link], and then push it to Github when you're done!
 
@@ -456,7 +454,9 @@ We've got our hero and villian for Spider-Text, what else can we build out? Can 
 
 While Spider-Text will become an amazing game, it also showcased how closures are a phenominal example of JavaScript's versitility. We're able to nest functions within each other, define clear scope boundaries, set functions to variables, create anonymous functions, and self-invoke them as well. 
 
-Closures also allows for [object-oriented programming](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS) in JavaScript, in addition to many other more advanced techniques that we'll cover in later tutorials. What are some other applications of closures you can think of?
+Closures also allow for creating public/private variables and functions. This is important if we ever want to restrict access, as rarely does it make sense to make everything global. For example, what if *anyone* could change Spider-Man's health? Or make him shoot a web?
+
+We need structure in place to allow for more complex systems. Writing closures in this way also lends itself to doing [object-oriented programming](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS) in JavaScript, in addition to many other more advanced techniques that we'll cover in later tutorials. What are some other applications of closures you can think of?
 
 Please check out the [self assessment questions](self_assessment.md) to see how well you've mastered the concepts!
 

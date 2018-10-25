@@ -2,7 +2,9 @@
 Questions are subsections, answers/ways for teachers to measure understanding given in quote blocks.
 
 ## 1. In your own words, describe what a Closure is
-> A closure is a function within a function. Anything other than that means they missed the major point of this tutorial
+> A partial credit answer would be along the lines of saying that a closure is "a function within a function." For full credit, they also need to mention how lexical scope plays a part in it, and that closures can access data outside of its own scope (i.e. its parent's data).
+> 
+> If they don't touch on the above points, it means that means they missed the major point of this tutorial
 
 ## 2. Given the code block, what value would be returned by the function sayFoo?
 

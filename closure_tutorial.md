@@ -133,11 +133,11 @@ webSwing(); // webCounter = 99, spidey says "spin a web any size - I'm swinging!
 webSwing(); // webCounter = 98, spidey says "just hangin - I'm swinging!"
 ~~~
 
-`shootWeb()` is able to access the variable (`webCounter`) and the function `checkWebSupply()` from its parent function `webSwing()`, as well as global variables and functions such as `quips` and `getRandomInt()`! Because the innermost (child) function *lives inside the parent function*, it is able to access its parent's scope. This is an example of **lexical scoping**.
+`shootWeb()` is able to access the variable `webCounter` and the function `checkWebSupply()` from its parent function `webSwing()`, as well as global variables and functions such as `quips` and `getRandomInt()`! Because the innermost (child) function *lives inside the parent function*, it is able to access its parent's scope. This is an example of **lexical scoping**.
 
 One important reason we wrote it this way is so that no other function can tamper with our `webCounter` variable or call our `checkWebSupply()` function. We "protect" it in a way by **reducing its scope to inside this function.**
 
-**This overall concept of defining a function within a function is a closure!**
+**This overall concept of defining a function within a function, and knowing the lexical scope within which it was defined, is a closure!**
 
 ## Scope Chain
 By declaring functions within functions, you create a **Scope Chain**. A scope chain is a one-way scoping relationship where a function has access to all scopes above it in the chain.

@@ -111,7 +111,7 @@ function webSwing() {
 	// Can shoot 100 times before needing to refill
 	var webCounter = 100;
 		
-		// Checks how much web spider-man has left to use, returns -1 if he's out
+	// Checks how much web spider-man has left to use, returns -1 if he's out
 	function checkWebSupply() {
 		if (webCounter <= 0) {
 			return -1;

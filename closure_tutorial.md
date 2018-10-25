@@ -1,5 +1,5 @@
 [cs10_lecture]: https://docs.google.com/presentation/d/1zuGTzrwfTxN-dd8nS7w4sjnIJdOtc6z3GaBtu2POgiA/edit#slide=id.g12e14709f3_0_292
-# What's a Closure?
+# Chapter 1: What's a Closure?
 [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures) defines a **Closure** as the following
 > A closure is the combination of a function and the lexical environment within which that function was declared.
 
@@ -20,7 +20,7 @@ By the end of this tutorial, you will be able to:
 Source: Giphy
 </p>
 
-# Global vs. Local Scope
+# Chapter 2: Global vs. Local Scope
 Closures rely heavily on understanding how scoping works. Remember, scoping is like your favorite vegetable/ogre:
 
 <p align="center">
@@ -69,14 +69,14 @@ Given the above code block, answer the following questions:
 2. If we changed the `return` value of `localFn()` to `boom`, what would be returned?
 3. If we changed the `return` value of `localFn2()` to `localTest`, what would be returned?
 
-Try them for yourself by running them in [jsConsole][jsConsole_link]!
+Try them for yourself by running them in [jsConsole][jsConsole_link]! If some of the answers surprised you, we'll go over the answers in the next chapter.
 
-# Closures
+# Chapter 3: Closures
 ## Recap
 * Global variables/functions can be accessed by all other variables and functions
 * Local variables/functions can only be accessed within the function they live in
 
-This is why in question 1 from the last chapter, `localFn()` returned `localfoo` and not `foo`, since there was a `foo` variable that lived within its own scope, it didn't look further to check out the global variables.
+This is why in question 1 from the last chapter, `localFn()` returned `localfoo` and not `foo`, since there was a `foo` variable that lived within its own scope, it didn't look further to check out the global variables. **The most local definition wins!**
 
 This is also why in question 3 from the last chapter, `localFn2()` returned a reference error, since `localTest` was not a variable that was within the local or global scope of `localFn()`.
 
@@ -94,25 +94,13 @@ Source: TakesOnTech
 Overcome with inspiration, you want to make Spider-Text, a text-based Spider-Man game, so that you can get more practice programming with a topic you love!
 
 ## Web-Slinger
-The first thing we'd want to do is build out some of Spider-Man's attributes. Before we build out everything, let's just cover one basic trait: he needs to be able to swing on his webs!
-
-We need to write a function for him to be able to swing, but in order to swing, he needs to be able to shoot webs.
-
-Remember, this is a much simpler Spider-Man, and he's only ever going to shoot webs if he's swinging. We don't want him to be able to shoot webs at any other time, so we can't make his web shooting function available in the global scope.
+The first thing Spiderman should do is swing around the city (of course), but in order to do that let's have him shoot webs. In our game, Spiderman can only shoot webs while he's swinging, so we can't make his web shooting function available in the global scope.
 
 But what if we defined a function ***within*** a function?
 
 ~~~javascript
-// Can shoot 100 times before needing to refill
-var webCounter = 100;
-
-// Checks how much web spider-man has left to use, returns -1 if he's out
-function checkWebSupply() {
-	if (webCounter <= 0) {
-		return -1;
-	}
-	return webCounter;
-}
+// Spider-Man is a talker, so we need some phrases for him to say
+var quips = ["just hangin", "spin a web any size", "look ma, no hands!"];
 
 // Returns a random integer between 0 and max
 function getRandomInt(max) {
@@ -121,15 +109,23 @@ function getRandomInt(max) {
 
 // Spider-man says a quip, shoots his web, and then swings from it
 function webSwing() {
-	// Spider-Man is a talker, so we need some phrases for him to say
-	var quips = ["just hangin", "spin a web any size", "look ma, no hands!"]
+	// Can shoot 100 times before needing to refill
+	var webCounter = 100;
+		
+		// Checks how much web spider-man has left to use, returns -1 if he's out
+	function checkWebSupply() {
+		if (webCounter <= 0) {
+			return -1;
+		}
+		return webCounter;
+	}
 	
 	function shootWeb() {
 		webCount = checkWebSupply();
 		if (webCount <= 0) {
 			return "I'm out of webs!";
 		}
-		webCounter -= 1
+		webCounter -= 1;
 		return quips[getRandomInt(quips.length)] + " - I'm swinging!";
 	}
 	return shootWeb();
@@ -138,7 +134,9 @@ webSwing(); // webCounter = 99, spidey says "spin a web any size - I'm swinging!
 webSwing(); // webCounter = 98, spidey says "just hangin - I'm swinging!"
 ~~~
 
-`shootWeb()` is able to access the variables (`quips`) from its parent function `webSwing()`, as well as global variables and functions such as `webCounter` and `getRandomInt`! Because the innermost (child) function *lives inside the parent function*, it is able to access its parent's scope. This is an example of **lexical scoping**.
+`shootWeb()` is able to access the variable (`webCounter`) and the function `checkWebSupply()` from its parent function `webSwing()`, as well as global variables and functions such as `quips` and `getRandomInt()`! Because the innermost (child) function *lives inside the parent function*, it is able to access its parent's scope. This is an example of **lexical scoping**.
+
+One important reason we wrote it this way is so that no other function can tamper with our `webCounter` variable or call our `checkWebSupply()` function. We "protect" it in a way by **reducing its scope to inside this function.**
 
 **This overall concept of defining a function within a function is a closure!**
 
@@ -155,7 +153,7 @@ Source: Ian Birnam
 Here's the Scope Chain from the previous Web-Slinger section:
 
 <p align="center">
-<img src="https://i.imgur.com/FF8GsVf.png" alt="web-slinger scope chain"/>
+<img src="https://i.imgur.com/QqIFqeg.png" alt="web-slinger scope chain"/>
 </p>
 <p align="center">
 Source: Ian Birnam
@@ -183,7 +181,7 @@ Your code should pass the following tests:
 
 Verify and test your code with [jsConsole][jsConsole_link], and then push it to GitHub when you're done!
 
-# Anonymous Closures
+# Chapter 4: Anonymous Closures
 ## Recap
 * A Closure is a function defined within a function
 * Scope chain shows how scope is passed on from outer to inner (parent to child) functions
@@ -204,7 +202,7 @@ Let's go over what needs to be captured in this character:
 The above requirements aren't *all* the requirements of Spider-Man, but we need to start somewhere. We'll tackle them in sections:
 
 ### Secret Identity, Health, Stamina, and Webbing
-These should be variables of the Spider-Man character
+These should be variables of the Spider-Man character. We'll also include the `quips` from earlier.
 
 ~~~javascript
 function() {
@@ -213,6 +211,7 @@ function() {
 	var health = -1;
 	var stamina = -1;
 	var webCounter = -1;
+	var quips = ["just hangin", "spin a web any size", "look ma, no hands!"];
 }
 ~~~
 
@@ -226,6 +225,7 @@ function() {
 	var health = -1;
 	var stamina = -1;
 	var webCounter = -1;
+	var quips = ["just hangin", "spin a web any size", "look ma, no hands!"];
 	
 	// Private functions
 
@@ -249,6 +249,7 @@ function() {
 	var health = -1;
 	var stamina = -1;
 	var webCounter = -1;
+	var quips = ["just hangin", "spin a web any size", "look ma, no hands!"];
 	
 	// Private functions
 	
@@ -260,13 +261,6 @@ function() {
 		stamina = data.stamina;
 	}
 	
-	// Checks how much web spider-man has left to use, returns -1 if he's out
-	function checkWebSupply() {
-		if (webCounter <= 0) {
-			return -1;
-		}
-		return webCounter;
-	}
 
 	// Returns a random integer between 0 and max
 	function getRandomInt(max) {
@@ -287,14 +281,19 @@ function() {
 			// Fight code from previous chapter...
 		},
 		webSwing: function() {
-			// Spider-Man is a talker, so we need some phrases for him to say
-			var quips = ["just hangin", "spin a web any size", "look ma, no hands!"]
+			// Checks how much web spider-man has left to use, returns -1 if he's out
+			var checkWebSupply = function() {
+				if (webCounter <= 0) {
+					return -1;
+				}
+				return webCounter;
+			}
 			var shootWeb = function() {
 					webCount = checkWebSupply();
 					if (webCount <= 0) {
 						return "I'm out of webs!";
 					}
-					webCounter -= 1
+					webCounter -= 1;
 					return quips[getRandomInt(quips.length)] + " - I'm swinging!";
 				};
 			return shootWeb();
@@ -319,6 +318,8 @@ The main difference between the two is that **Function Expressions can retain a 
 
 By storing the function in a variable, we will be able to create **state** for our character. State will allow us to save Spider-Man's data (like his secret identity) and allows us to update data and have those updates persist.
 
+Because of this, many people use function expressions because they create more structure in your code. Functions that call other functions require writing them in a specific order, as not everything is at the global level. It's the difference between storing your clothes neatly in a dresser versus piling them all on a table. Both can work, but the organization of a dresser makes it easier to work with (or so they say). 
+
 Let's store our big function into a `var spiderMan`:
 
 ~~~javascript
@@ -332,6 +333,7 @@ getHealth(); // returns 100
 webSwing(); // webCounter down to 99, spidey says "spin a web any size - I'm swinging!"
 ~~~
 That should get us what we want...right?
+
 ## Anonymous Closures
 Just making a function expression isn't going to be enough. There's still one more missing piece we need to go over.
 
@@ -343,7 +345,7 @@ What we need to do is create an **Anonymous Closure**, also known as an **Instan
 var spiderMan = (function() {...})();
 ~~~
 
-Anonymous closures also allow us to have private variables/functions in JavaScript, as there is no way to access variables or functions unless you return them, since we've restricted the scope.
+Anonymous closures also allow us to have private variables/functions in JavaScript, as there is no way to access variables or functions unless you return them, since we've restricted the scope. Going back to the dresser analogy, anonymous closures are like putting locks on the drawers, and you get to choose who gets keys to which drawers (or if no one gets a key but yourself).
 
 Now we can finally create our Spider-Man:
 
@@ -354,6 +356,7 @@ var spiderMan = (function() {
 	var health = -1;
 	var stamina = -1;
 	var webCounter = -1;
+	var quips = ["just hangin", "spin a web any size", "look ma, no hands!"];
 	
 	// Private functions
 	
@@ -363,14 +366,6 @@ var spiderMan = (function() {
 		health = data.health;
 		webCounter = data.webCounter;
 		stamina = data.stamina;
-	}
-	
-	// Checks how much web spider-man has left to use, returns -1 if he's out
-	function checkWebSupply() {
-		if (webCounter <= 0) {
-			return -1;
-		}
-		return webCounter;
 	}
 	
 	// Returns a random integer between 0 and max
@@ -392,14 +387,19 @@ var spiderMan = (function() {
 			// Fight code from previous chapter...
 		},
 		webSwing: function() {
-			// Spider-Man is a talker, so we need some phrases for him to say
-			var quips = ["just hangin", "spin a web any size", "look ma, no hands!"]
+			// Checks how much web spider-man has left to use, returns -1 if he's out
+			var checkWebSupply = function() {
+				if (webCounter <= 0) {
+					return -1;
+				}
+				return webCounter;
+			};
 			var shootWeb = function() {
 					webCount = checkWebSupply();
 					if (webCount <= 0) {
 						return "I'm out of webs!";
 					}
-					webCounter -= 1
+					webCounter -= 1;
 					return quips[getRandomInt(quips.length)] + " - I'm swinging!";
 			};
 			return shootWeb();
@@ -449,7 +449,7 @@ Your code should pass the following tests:
 
 Verify and test your code with [jsConsole][jsConsole_link], and then push it to GitHub when you're done!
 
-# Conclusion
+# Chapter 5: Conclusion
 We've got our hero and villain for Spider-Text, what else can we build out? Can we interact with civilians? How do characters take damage? How do they regain health and stamina? Can we allow Spider-Man to crawl on walls?  Continue to think about how you can build out Spider-Text, and if closures can help you to do so!
 
 While Spider-Text will become an amazing game, it also showcased how closures are a phenomenal example of JavaScript's versatility. We're able to nest functions within each other, define clear scope boundaries, set functions to variables, create anonymous functions, and self-invoke them as well. 

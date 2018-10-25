@@ -1,9 +1,8 @@
-[cs10_lecture]: https://docs.google.com/presentation/d/1zuGTzrwfTxN-dd8nS7w4sjnIJdOtc6z3GaBtu2POgiA/edit#slide=id.g12e14709f3_0_292
 # Chapter 1: What's a Closure?
 [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures) defines a **Closure** as the following
 > A closure is the combination of a function and the lexical environment within which that function was declared.
 
-In simpler terms, a closure is a **function defined within a function**. In order to fully understand that though, we'll need a refresher from the earlier [scoping](cs10_lecture) tutorial, which we'll cover in the next chapter.
+In simpler terms, a closure is a **function defined within a function**. In order to fully understand that though, we'll need a refresher from the earlier [scoping](https://docs.google.com/presentation/d/1zuGTzrwfTxN-dd8nS7w4sjnIJdOtc6z3GaBtu2POgiA/edit#slide=id.g12e14709f3_0_292) tutorial, which we'll cover in the next chapter.
 
 ## What You Will Learn
 By the end of this tutorial, you will be able to:
